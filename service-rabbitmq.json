@@ -1,0 +1,21 @@
+{
+    "kind": "Service",
+    "metadata": {
+        "labels": {
+            "external": "true",
+            "${NS_HASH}": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+        },
+        "name": "${RABBITMQ_SVC_NAME}-${RABBITMQ_SVC_HASH}"
+    },
+    "spec": {
+        "selector": {
+            "${NS_HASH}": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "targetPort": ${RABBITMQ_PORT}
+            }
+        ]
+    }
+}

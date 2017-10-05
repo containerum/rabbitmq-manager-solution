@@ -1,0 +1,54 @@
+{
+  "kind": "Deployment",
+  "metadata": {
+    "name": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "${RABBITMQ_DEPLOY_NAME}"
+        },
+        "name": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              
+              {
+                "name": "RABBITMQ_DEFAULT_PASS",
+                "value": "${RABBITMQ_PASSWORD}"
+              },
+              {
+	        "name": "RABBITMQ_DEFAULT_USER",
+                "value": "${RABBITMQ_USER}"
+              }
+           ],
+            "image": "${RABBITMQ_IMAGE}",
+            "name": "${RABBITMQ_DEPLOY_NAME}",
+            "resources": {
+              "requests": {
+                "cpu": "150m",
+                "memory": "150Mi"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "${RABBITMQDATA}",
+                "name": "default-volume",
+                "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}${RABBITMQDATA}"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "default-volume"
+          }
+        ]
+      }
+    }
+  }
+}
