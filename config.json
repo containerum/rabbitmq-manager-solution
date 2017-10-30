@@ -1,7 +1,7 @@
 {
   "env": {
     "RABBITMQ_IMAGE": "rabbitmq:3-management",
-    "RABBITMQ_PORT": "3000",
+    "RABBITMQ_PORT": "15672",
     "RABBITMQ_DEPLOY_NAME": "solution-rabbitmq",
     "RABBITMQ_SVC_NAME": "solution-rabbitmq-svc",
     "RABBITMQ_USER": "admin",
