@@ -38,7 +38,7 @@
               {
                 "mountPath": "${RABBITMQDATA}",
                 "name": "ch-glusterfs",
-                "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}${RABBITMQDATA}"
+                "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}-${RABBITMQDATA}"
               }
             ]
           }
