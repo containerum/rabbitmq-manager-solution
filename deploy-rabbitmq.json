@@ -37,7 +37,7 @@
             "volumeMounts": [
               {
                 "mountPath": "${RABBITMQDATA}",
-                "name": "ivan-volume",
+                "name": "ch-glusterfs",
                 "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}${RABBITMQDATA}"
               }
             ]
@@ -45,7 +45,7 @@
         ],
         "volumes": [
           {
-            "name": "ivan-volume"
+            "name": "ch-glusterfs"
           }
         ]
       }
