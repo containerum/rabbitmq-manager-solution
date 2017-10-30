@@ -30,14 +30,14 @@
             "name": "${RABBITMQ_DEPLOY_NAME}",
             "resources": {
               "requests": {
-                "cpu": "150m",
-                "memory": "150Mi"
+                "cpu": "300m",
+                "memory": "300Mi"
               }
             },
             "volumeMounts": [
               {
                 "mountPath": "${RABBITMQDATA}",
-                "name": "ivan-volume",
+                "name": "roman-volume",
                 "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}-${RABBITMQDATA}"
               }
             ]
@@ -45,7 +45,7 @@
         ],
         "volumes": [
           {
-            "name": "ivan-volume"
+            "name": "roman-volume"
           }
         ]
       }
