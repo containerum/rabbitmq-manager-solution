@@ -1,6 +1,8 @@
 # rabbitmq-manager-solution
 
 ## About
+![](images/rabbit.png)
+
 [RabbitMQ](https://www.rabbitmq.com) is an open source message broker: it accepts and forwards messages. It implements the Advanced Message Queuing Protocol (AMQP).
 
 [RabbitMQ Management Plugin](https://www.rabbitmq.com/management.html) allows you to monitor and manage your RabbitMQ server along with a browser-based UI and a command line too.
