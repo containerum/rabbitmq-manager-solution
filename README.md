@@ -7,6 +7,8 @@
 
 **Here we run this plugin in one command with [Containerum](https://containerum.com).**
 
+We use [this image](https://hub.docker.com/_/rabbitmq/) from DockerHub with `3-management` tag.
+
 ## How to deploy on Containerum
 
 **1.** Sign Up at [containerum.com](https://containerum.com)
