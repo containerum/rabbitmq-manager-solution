@@ -1,16 +1,16 @@
 {
   "kind": "Deployment",
   "metadata": {
-    "name": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+    "name": "{{.NAME}}-{{.HASH}}"
   },
   "spec": {
     "replicas": 1,
     "template": {
       "metadata": {
         "labels": {
-          "app": "${RABBITMQ_DEPLOY_NAME}"
+          "app": "{{.NAME}}-{{.HASH}}"
         },
-        "name": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+        "name": "{{.NAME}}-{{.HASH}}"
       },
       "spec": {
         "containers": [
@@ -19,33 +19,33 @@
               
               {
                 "name": "RABBITMQ_DEFAULT_PASS",
-                "value": "${RABBITMQ_PASSWORD}"
+                "value": "{{.PASSWORD}}"
               },
               {
 	        "name": "RABBITMQ_DEFAULT_USER",
-                "value": "${RABBITMQ_USER}"
+                "value": "{{.USER}}"
               }
            ],
-            "image": "${RABBITMQ_IMAGE}",
-            "name": "${RABBITMQ_DEPLOY_NAME}",
+            "image": "{{.IMAGE}}",
+            "name": "{{.NAME}}",
             "resources": {
               "requests": {
-                "cpu": "300m",
-                "memory": "300Mi"
+                "cpu": "{{,CPU}}",
+                "memory": "{{.RAM}}"
               }
             },
             "volumeMounts": [
               {
-                "mountPath": "${RABBITMQDATA}",
-                "name": "roman-volume",
-                "subPath": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}-${RABBITMQDATA}"
+                "mountPath": "{{.DATA}}",
+                "name": "{{.VOLUME}}",
+                "subPath": "{{.NAME}}-{{.HASH}}{{.DATA}}"
               }
             ]
           }
         ],
         "volumes": [
           {
-            "name": "roman-volume"
+            "name": "{{.VOLUME}}"
           }
         ]
       }

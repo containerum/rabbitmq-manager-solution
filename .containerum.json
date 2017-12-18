@@ -1,0 +1,23 @@
+{
+  "env": {
+    "IMAGE": "rabbitmq:3-management",
+    "PORT": "15672",
+    "NAME": "rabbitmq-solution",
+    "USER": "admin",
+    "DATA": "/var/lib/rabbitmq",
+    "HASH": "{{rand_string 5}}",
+    "PASSWORD": "{{rand_string 8}}",
+    "CPU": "500m",
+    "RAM": "500Mi"
+  },
+  "run":[
+    {
+      "type": "deployment",
+      "config_file": "deploy.json"
+    },
+    {
+      "type": "service",
+      "config_file": "service.json"
+    }  
+  ]
+}
