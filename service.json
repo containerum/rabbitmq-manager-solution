@@ -3,18 +3,18 @@
     "metadata": {
         "labels": {
             "external": "true",
-            "${NS_HASH}": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
         },
-        "name": "${RABBITMQ_SVC_NAME}-${RABBITMQ_SVC_HASH}"
+        "name": "{{.NAME}}-{{.HASH}}"
     },
     "spec": {
         "selector": {
-            "${NS_HASH}": "${RABBITMQ_DEPLOY_NAME}-${RABBITMQ_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.NAME}}-{{.HASH}}"
         },
         "ports": [
             {
                 "protocol": "TCP",
-                "targetPort": ${RABBITMQ_PORT}
+                "targetPort": {{.PORT}}
             }
         ]
     }
