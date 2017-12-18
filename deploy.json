@@ -16,13 +16,13 @@
         "containers": [
           {
             "env": [
-              
+
               {
                 "name": "RABBITMQ_DEFAULT_PASS",
                 "value": "{{.PASSWORD}}"
               },
               {
-	        "name": "RABBITMQ_DEFAULT_USER",
+          "name": "RABBITMQ_DEFAULT_USER",
                 "value": "{{.USER}}"
               }
            ],
@@ -30,7 +30,7 @@
             "name": "{{.NAME}}",
             "resources": {
               "requests": {
-                "cpu": "{{,CPU}}",
+                "cpu": "{{CPU}}",
                 "memory": "{{.RAM}}"
               }
             },
