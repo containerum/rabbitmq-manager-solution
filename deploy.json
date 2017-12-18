@@ -30,7 +30,7 @@
             "name": "{{.NAME}}",
             "resources": {
               "requests": {
-                "cpu": "{{CPU}}",
+                "cpu": "{{.CPU}}",
                 "memory": "{{.RAM}}"
               }
             },
