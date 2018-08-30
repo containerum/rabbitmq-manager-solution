@@ -40,5 +40,3 @@ $ chkit get svc
 +--------------+----------------+----------+-------------------+-----------------+-----+
 ```
 4. Go to `x2.containerum.io:28553`and create queues using UI.
-
-![](/gif/rabbitsln.gif)
